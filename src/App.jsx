@@ -8,10 +8,10 @@ import logoImg from './assets/logo.png';
 import { sortPlacesByDistance } from './loc.js';
 
 function App() {
-  const [modalIsOpen,setModalOpen] = useState(false)
+  const [modalIsOpen, setModalOpen] = useState(false)
   const selectedPlace = useRef();
   const [pickedPlaces, setPickedPlaces] = useState([]);
-  const [availablePlaces,setAvailablePlaces] = useState([]);
+  const [availablePlaces, setAvailablePlaces] = useState([]);
 
   useEffect(() => {
     const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || [];
@@ -50,7 +50,7 @@ function App() {
     });
 
     const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || [];
-    if(storedIds.indexOf(id) === -1){
+    if (storedIds.indexOf(id) === -1) {
       localStorage.setItem("selectedPlaces", JSON.stringify([id, ...storedIds]));
     }
   }
